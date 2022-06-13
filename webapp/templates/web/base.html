@@ -3,6 +3,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
 </head>
 
+{% for message in get_flashed_messages() %}
+<div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+        <span class="card-title">Уведомление</span>
+        <p>{{ message }}</p>
+    </div>
+</div>
+{% endfor %}
+
 {% block body %}
 
 <body>
@@ -10,7 +19,9 @@
         <div class="nav-wrapper deep-purple">
             <ul id="nav-mobile" class="left">
                 <li><a href="{{ url_for('index') }}">Главная</a></li>
-                <li><a href="{{ url_for('add_employee') }}">Добавить пользователя</a></li>
+                <li><a href="{{ url_for('add_card') }}">Добавить карточку</a></li>
+                <li><a href="{{ url_for('add_profession') }}">Добавить должность</a></li>
+                <li><a href="{{ url_for('add_item') }}">Добавить предмет</a></li>
             </ul>
         </div>
     </nav>
@@ -20,6 +31,7 @@
     </div>
 </body>
 {% endblock %}
+
 
 <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>

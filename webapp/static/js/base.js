@@ -39,20 +39,13 @@ let rus_locale = {
     'Суббота',
     'Воскресенье',
   ],
-  weekdaysAbbrev: [
-    'Пн',
-    'Вт',
-    'Ср',
-    'Чт',
-    'Пт',
-    'Сб',
-    'Вс',
-  ],
+  weekdaysAbbrev: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  let datepick = M.Datepicker.init(document.querySelector('.datepicker'), {
+  M.Datepicker.init(document.querySelectorAll('.datepicker'), {
     format: 'dd.mm.yyyy',
     i18n: rus_locale,
   })
+  M.FormSelect.init(document.querySelectorAll('select'))
 })

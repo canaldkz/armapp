@@ -25,4 +25,10 @@ app.secret_key = "CZ3EL5IH12ASMQ6RRXV3458JBC2GPDK0JL3RCKPGU648NBO5"
 session_factory = sessionmaker(engine, autocommit=False, autoflush=False)
 web_session = scoped_session(session_factory=session_factory)
 
+
+@app.teardown_appcontext
+def cleanup(r):
+    web_session.remove()
+
+
 from webapp import routes
