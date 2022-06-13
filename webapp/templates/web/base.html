@@ -1,0 +1,26 @@
+<head>
+    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+</head>
+
+{% block body %}
+
+<body>
+    <nav>
+        <div class="nav-wrapper deep-purple">
+            <ul id="nav-mobile" class="left">
+                <li><a href="{{ url_for('index') }}">Главная</a></li>
+                <li><a href="{{ url_for('add_employee') }}">Добавить пользователя</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div clas="container">
+        {% block container %}
+        {% endblock %}
+    </div>
+</body>
+{% endblock %}
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/base.js') }}"></script>

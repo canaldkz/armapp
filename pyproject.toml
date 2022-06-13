@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "armapp"
+version = "0.1.0"
+description = ""
+authors = ["canaldkz <canald000@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.12"
+Flask = "^2.1.2"
+Flask-Charts = "^1.7"
+Flask-Moment = "^1.0.2"
+SQLAlchemy = "^1.4.37"
+pywebview = "^3.6.3"
+Jinja2 = "^3.1.2"
+Flask-WTF = "^1.0.1"
+pythonnet = "3.0.0a2"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.3.0", allow-prereleases = true}
+pyinstaller = "^5.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

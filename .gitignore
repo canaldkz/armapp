@@ -1,0 +1,6 @@
+/.vscode
+/build/build
+/build/dist
+/__pycache__
+
+poetry.lock
