@@ -1,0 +1,34 @@
+{% extends 'web/base.html' %}
+
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block container %}
+<div class="container center-align">
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Табельный номер</th>
+                <th>Должность</th>
+                <th>Дата</th>
+                <th>Предметы</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for card in cards%}
+            <tr>
+                <td>{{ card.first_name }}</td>
+                <td>{{ card.last_name }}</td>
+                <td>{{ card.service_id }}</td>
+                <td>{{ card.prof_id }}</td>
+                <td>{{ card.date }}</td>
+                <td>Lololo</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

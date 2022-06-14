@@ -6,11 +6,23 @@ from webapp.forms import *
 from datetime import datetime
 
 
+@app.errorhandler(404)
+def e404(e):
+    return "<h1>Произошла ошибка!</h1>"
+
+
+@app.errorhandler(500)
+def e500(e):
+    return "<h1>Произошла ошибка!</h1>"
+
+
 @app.route("/")
 def index():
-    ip = request.remote_addr
-    now = moment.create(datetime.now())
-    return render_template("web/index.html", time=now, title="Главная")
+    res = crud.get_all_cards(web_session())
+    if res[0]:
+        print(res[1])
+
+    return render_template("web/view.html", title="Главная", cards=res[1])
 
 
 @app.route("/add_card", methods=["GET", "POST"])
@@ -65,6 +77,7 @@ def add_item():
     return render_template("web/add.html", form=form, title="Добавить предмет")
 
 
-@app.route("/close")
-def close_window():
+@app.route("/get_data/<component>")
+def get_data(component):
+    
     return render_template("web/close.html")

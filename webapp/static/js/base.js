@@ -49,3 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   })
   M.FormSelect.init(document.querySelectorAll('select'))
 })
+
+window.oncontextmenu = function (e) {
+  e.preventDefault()
+}
